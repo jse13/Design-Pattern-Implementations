@@ -1,7 +1,10 @@
 package main
-import "./factory_lib"
+import af "./factory_lib"
 
-func run( factory factory_lib.Abstract_Factory ) {
+// The "main application loop" that has a factory injected into it.
+// The function doesn't care what family A and B belong to so long as they
+// implement the same interface.
+func run( factory af.Abstract_Factory ) {
 	a := factory.Construct_A()
 	a.Print()
 	b := factory.Construct_B()
@@ -9,6 +12,8 @@ func run( factory factory_lib.Abstract_Factory ) {
 }
 
 func main() {
-	factory := factory_lib.Factory_1{}
+	// Create the correct concrete factory for injection into the rest of the application.
+	factory := af.Factory_1{}
+
 	run( factory )
 }

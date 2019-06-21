@@ -2,6 +2,7 @@ package factory_lib
 
 import "fmt"
 
+// Concrete implementation of the B product that's part of family 2
 type B1 struct {
 }
 
